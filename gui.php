@@ -16,6 +16,11 @@ const VERSION = '0.1';
 
 add_action( 'mercator_load', __NAMESPACE__ . '\\admin_init' );
 
+/**
+ * Include temporary funcs
+ */
+require_once 'inc/functions.php';
+
 function is_enabled() {
 	/**
 	 * Whether to load the site level admin interface or not
