@@ -64,7 +64,7 @@ function enqueue_scripts( $hook ) {
 	wp_add_inline_script(
 		'mercator-gui',
 		sprintf(
-			'<script>var mercator = %s;</script>',
+			'var mercator = %s;',
 			wp_json_encode( $data )
 		), 'before'
 	);
