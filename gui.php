@@ -16,11 +16,6 @@ const VERSION = '0.1';
 
 add_action( 'mercator_load', __NAMESPACE__ . '\\admin_init' );
 
-/**
- * Load REST API.
- */
-require_once 'inc/api/api.php';
-
 function is_enabled() {
 	/**
 	 * Whether to load the site level admin interface or not
