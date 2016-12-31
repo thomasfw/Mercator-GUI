@@ -4,8 +4,6 @@ namespace Mercator\GUI;
 
 use Mercator\Mapping;
 
-const VERSION = '0.1';
-
 add_action( 'admin_menu', __NAMESPACE__ . '\\menu_item' );
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
 add_action( 'wp_ajax_mercator-gui', __NAMESPACE__ . '\\handle_ajax' );
