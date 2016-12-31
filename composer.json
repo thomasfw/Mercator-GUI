@@ -1,0 +1,22 @@
+{
+	"name": "humanmade/mercator-GUI",
+	"description": "A GUI component for Mercator domain mapping.",
+	"homepage": "https://github.com/humanmade/Mercator-GUI",
+	"keywords": [
+		"wordpress"
+	],
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name":"Human Made Limited",
+			"email":"support@humanmade.co.uk",
+			"homepage":"http://hmn.md/"
+		}
+	],
+	"type": "wordpress-muplugin",
+	"require": {
+		"composer/installers": "~1.0",
+		"humanmade/Mercator-REST-API": "dev-master"
+	 }
+
+}
