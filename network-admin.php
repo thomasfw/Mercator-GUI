@@ -245,7 +245,7 @@ function output_list_page() {
 	if ( ! can_edit_network( $details->site_id ) || (int) $details->blog_id !== $id )
 		wp_die( __( 'You do not have permission to access this page.' ) );
 
-	$wp_list_table = new Alias_List_Table( array(
+	$wp_list_table = new \Mercator\Admin\Alias_List_Table( array(
 		'site_id' => $id,
 	) );
 
