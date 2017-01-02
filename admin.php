@@ -27,16 +27,17 @@ function enqueue_scripts( $hook ) {
 		return;
 	}
 
+	// Get the mapping (if there is any)
+	$mapping = Mapping::get_by_site( get_current_blog_id() );
+	$mapping = ($mapping && is_array($mapping)) ? array_map( __NAMESPACE__ . '\\mapping_to_array', $mapping ) : '';
+
 	// Initial data object, for fast loading fun times
 	$data = array(
 		'endpoint'  => get_rest_url() . 'mercator/v1',
 		'api'   	=> admin_url( '/admin-ajax.php' ),
 		'nonce' 	=> wp_create_nonce( 'wp_rest' ),
 		'data'  	=> array(
-			'aliases'  => array_map(
-				__NAMESPACE__ . '\\mapping_to_array',
-				Mapping::get_by_site( get_current_blog_id() )
-			),
+			'aliases'  => $mapping,
 			'site'     => get_site( get_current_blog_id() ),
 			'mainSite' => get_site( get_main_site_for_network() ),
 		),
