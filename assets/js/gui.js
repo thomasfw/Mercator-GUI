@@ -82,7 +82,7 @@ var ENTER_KEY = 13;
 
   var Aliases = Backbone.Collection.extend( {
 
-    url: '/wp-json/mercator/v1/mappings',
+    url: mercator.endpoint + '/mappings',
 
     sync: mercator.sync,
 
@@ -265,7 +265,7 @@ var ENTER_KEY = 13;
 
   var Primary = Backbone.Collection.extend( {
 
-    url: '/wp-json/mercator/v1/primary',
+    url: mercator.endpoint + '/primary',
 
     model: mercator.Primary
 

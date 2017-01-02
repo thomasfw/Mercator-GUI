@@ -29,9 +29,10 @@ function enqueue_scripts( $hook ) {
 
 	// Initial data object, for fast loading fun times
 	$data = array(
-		'api'   => admin_url( '/admin-ajax.php' ),
-		'nonce' => wp_create_nonce( 'wp_rest' ),
-		'data'  => array(
+		'endpoint'  => get_rest_url() . 'mercator/v1',
+		'api'   	=> admin_url( '/admin-ajax.php' ),
+		'nonce' 	=> wp_create_nonce( 'wp_rest' ),
+		'data'  	=> array(
 			'aliases'  => array_map(
 				__NAMESPACE__ . '\\mapping_to_array',
 				Mapping::get_by_site( get_current_blog_id() )
